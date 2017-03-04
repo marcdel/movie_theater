@@ -27,9 +27,9 @@ defmodule MovieTheater.Web.ChannelCase do
 
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(MovieTheater.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(SeatSaver.Repo)
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(MovieTheater.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(SeatSaver.Repo, {:shared, self()})
     end
     :ok
   end

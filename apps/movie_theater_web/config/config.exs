@@ -8,7 +8,7 @@ use Mix.Config
 # General application configuration
 config :movie_theater_web,
   namespace: MovieTheater.Web,
-  ecto_repos: [MovieTheater.Repo]
+  ecto_repos: [SeatSaver.Repo]
 
 # Configures the endpoint
 config :movie_theater_web, MovieTheater.Web.Endpoint,
