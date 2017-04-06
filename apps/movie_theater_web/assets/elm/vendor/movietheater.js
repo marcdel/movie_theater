@@ -8170,6 +8170,16 @@ var _user$project$MovieTheater$view = function (model) {
 		},
 		A2(_elm_lang$core$List$map, _user$project$MovieTheater$seatItem, model));
 };
+var _user$project$MovieTheater$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		var updateSeat = function (seat) {
+			return _elm_lang$core$Native_Utils.eq(seat.seatNo, _p0._0.seatNo) ? _elm_lang$core$Native_Utils.update(
+				seat,
+				{occupied: !seat.occupied}) : seat;
+		};
+		return A2(_elm_lang$core$List$map, updateSeat, model);
+	});
 var _user$project$MovieTheater$init = {
 	ctor: '::',
 	_0: {seatNo: 1, occupied: false},
@@ -8225,6 +8235,9 @@ var _user$project$MovieTheater$Seat = F2(
 	function (a, b) {
 		return {seatNo: a, occupied: b};
 	});
+var _user$project$MovieTheater$Toggle = function (a) {
+	return {ctor: 'Toggle', _0: a};
+};
 
 var Elm = {};
 Elm['MovieTheater'] = Elm['MovieTheater'] || {};

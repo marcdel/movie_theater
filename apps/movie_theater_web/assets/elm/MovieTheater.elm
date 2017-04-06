@@ -41,6 +41,28 @@ init =
 
 
 
+-- UPDATE
+
+
+type Msg
+    = Toggle Seat
+
+
+update : Msg -> Model -> Model
+update msg model =
+    case msg of
+        Toggle seatToToggle ->
+            let
+                updateSeat seat =
+                    if seat.seatNo == seatToToggle.seatNo then
+                        { seat | occupied = not seat.occupied }
+                    else
+                        seat
+            in
+                List.map updateSeat model
+
+
+
 -- VIEW
 
 
