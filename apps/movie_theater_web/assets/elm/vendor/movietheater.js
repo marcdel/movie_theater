@@ -7795,8 +7795,8 @@ var _elm_lang$html$Html$summary = _elm_lang$html$Html$node('summary');
 var _elm_lang$html$Html$menuitem = _elm_lang$html$Html$node('menuitem');
 var _elm_lang$html$Html$menu = _elm_lang$html$Html$node('menu');
 
-var _user$project$MovieTheater$main = _elm_lang$virtual_dom$Native_VirtualDom.staticProgram(
-	_elm_lang$html$Html$text('Hello from Elm'));
+var _user$project$MovieTheater$view = _elm_lang$html$Html$text('Hello from view.');
+var _user$project$MovieTheater$main = _elm_lang$virtual_dom$Native_VirtualDom.staticProgram(_user$project$MovieTheater$view);
 
 var Elm = {};
 Elm['MovieTheater'] = Elm['MovieTheater'] || {};
