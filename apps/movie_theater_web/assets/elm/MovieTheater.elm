@@ -2,11 +2,16 @@ module MovieTheater exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (class)
+import Html.Events exposing (onClick)
 
 
-main : Html String
+main : Program Never Model Msg
 main =
-    view init
+    Html.beginnerProgram
+        { model = init
+        , update = update
+        , view = view
+        }
 
 
 
@@ -66,11 +71,22 @@ update msg model =
 -- VIEW
 
 
-view : Model -> Html String
+view : Model -> Html Msg
 view model =
     ul [ class "seats" ] (List.map seatItem model)
 
 
-seatItem : Seat -> Html String
+seatItem : Seat -> Html Msg
 seatItem seat =
-    li [ class "seat available" ] [ text (toString seat.seatNo) ]
+    let
+        occupiedClass =
+            if seat.occupied then
+                "occupied"
+            else
+                "available"
+    in
+        li
+            [ class ("seat " ++ occupiedClass)
+            , onClick (Toggle seat)
+            ]
+            [ text (toString seat.seatNo) ]
